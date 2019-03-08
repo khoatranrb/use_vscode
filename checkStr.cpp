@@ -4,7 +4,7 @@ using namespace std;
 
 int main()
 {
-	int q,lenA,lenB,X;
+	int q,lenA,lenB,X,y,j,i;
 	cin>>q;
 	string a,b;
 	for(int k=0;k<q;k++)
@@ -19,21 +19,16 @@ int main()
         }
         if(lenA>lenB)
         {
-        	for(int i=0;i<lenB;i++)
-        	{
-    	    	for(int j=0;j<lenA;j++)
+        	    j=0; i=0;X=0;
+    	    	while(j<lenA)
     	    	{
     		    	if((b[i]==a[j])||(b[i]==a[j]-32)||(b[i]==a[j]+32))
-    		     	{
-    		     		X=1;
-    			    	for(int x=1;x<lenB-j;x++)
-    			    	{
-    			    	    if((b[i]==a[j])||(b[i]==a[j]-32)||(b[i]==a[j]+32)) X++;
-    			    	}
-    			    	j+=100;
+    			  	{
+    			  		X++; i++;
     		    	}
+    		    	j++;
     	    	}
-        	}
+    	    	cout<<X;
         }  
     }
     return 0;
